@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maze</title>
+  <link rel="stylesheet" href="./Maze.css">
+   
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./Maze.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+  <style>
+    #menu{
+      margin-top: 60px; /* Adjust this value as needed */
+    }
+    #view {
+      margin-top: 120px; /* Adjust this value as needed */
+
+    }
+  </style>
+</head>
+<div id="js-preloader" class="js-preloader">
+  <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+  </div>
+</div>
+
+<header class="header-area header-sticky">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <nav class="main-nav">
+                  <a href="index.html" class="logo">
+                      <img src="assets/images/logo.png" alt="">
+                  </a>
+                 
+                  <div class="search-input">
+                      <form id="search" action="#">
+                          <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
+                          <i class="fa fa-search"></i>
+                      </form>
+                  </div>
+                
+                  <ul class="nav">
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="browse.html" class="active">Browse</a></li>
+                      <li><a href="#">Profile <img src="assets/images/profile-header.jpg" alt=""></a></li>
+                  </ul>   
+                  <a class='menu-trigger'>
+                      <span>Menu</span>
+                  </a>
+              </nav>
+          </div>
+      </div>
+  </div>
+</header>
+<body>
+ 
+  <div id="page">
+
+    <div id="Message-Container">
+      <div id="message">
+        <h1>Congratulations!</h1>
+        <p>You are done.</p>
+        <p id="moves"></p>
+        <input id="okBtn" type="button" onclick="toggleVisablity('Message-Container')" value="Cool!" />
+      </div>
+    </div>
+
+    <br>
+    <div class="GAMESE">
+      <div id="menu">
+        <div class="custom-select">
+          <select id="diffSelect">
+            <option value="10">Easy</option>
+            <option value="15">Medium</option>
+            <option value="25">Hard</option>
+            <option value="38">Extreme</option>                                      
+          </select>
+        </div>
+        <input id="startMazeBtn" type="button" onclick="makeMaze()" value="Start" />
+      </div>
+
+      <div id="view">
+        <div id="mazeContainer">
+          <canvas id="mazeCanvas" class="border" height="1100" width="1100"></canvas>
+        </div>
+      </div>
+    </div>
+    <br>
+    <p id="instructions">Use arrow keys to move the key to the house!</p>
+    <h4>Maze By IEEE Eniso sb</h4>
+  </div>
+
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
+  
+  <script src="./Maze.js"></script>
+</body>
+</html>
+
+
+
+ <!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Maze - Cyborg</title>
+    
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Maze.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+</head>
+
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <a href="index.html" class="logo">
+                            <img src="assets/images/logo.png" alt="">
+                        </a>
+                       
+                        <div class="search-input">
+                            <form id="search" action="#">
+                                <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
+                                <i class="fa fa-search"></i>
+                            </form>
+                        </div>
+                      
+                        <ul class="nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="browse.html" class="active">Browse</a></li>
+                            <li><a href="profile.html">Profile <img src="assets/images/profile-header.jpg" alt=""></a></li>
+                        </ul>   
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+<body>
+
+  <div id="page">
+
+    <div id="Message-Container">
+      <div id="message">
+        <h1>Congratulations!</h1>
+        <p>You are done.</p>
+        <p id="moves"></p>
+        <input id="okBtn" type="button" onclick="toggleVisablity('Message-Container')" value="Cool!" />
+      </div>
+    </div>
+
+    <br>
+    <div id="menu">
+      <div class="custom-select">
+        <select id="diffSelect">
+                  <option value="10">Easy</option>
+                  <option value="15">Medium</option>
+                  <option value="25">Hard</option>
+                  <option value="38">Extreme</option>                                      
+              </select>
+      </div>
+      <input id="startMazeBtn" type="button" onclick="makeMaze()" value="Start" />
+    </div>
+
+    <div id="view">
+      <div id="mazeContainer">
+        <canvas id="mazeCanvas" class="border" height="1100" width="1100"></canvas>
+      </div>
+    </div>
+
+    <p id="instructions">Use arrow keys to move the key to the house!</p>
+
+  </div>
+
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/popup.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
+    
+    <script src="./Maze.js"></script>
+
+</body>
+
+</html>
+
+
+
+ -->

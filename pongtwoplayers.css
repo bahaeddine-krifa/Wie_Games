@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ensure full height for centering */
+    margin: 0; /* Remove default margin */
+}
+
+#board {
+    background-color: rgb(67, 65, 65);
+    border-top: 5px solid skyblue;
+    border-bottom: 5px solid skyblue;
+   
+}
